@@ -31,6 +31,8 @@ module Rails
     end
 
     def start(after_stop_callback = nil)
+      pp "Rails::Server#start"
+      pp ["after_stop_callback", after_stop_callback]
       trap(:INT) { exit }
       create_tmp_directories
       setup_dev_caching
